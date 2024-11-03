@@ -1,11 +1,11 @@
-function CircleArea(Rad, PI) {
-    var Area = 0;
-    if (PI == undefined) {
-        PI = 3.14;
+function summation(No) {
+    var sum = 0;
+    for (var i = 0; i < No.length; i++) {
+        sum += No[i];
     }
-    Area = PI * Rad * Rad;
-    return Area;
+    return sum;
 }
-var radius = 5;
-var area = CircleArea(radius);
-console.log("Area of circle is : " + area);
+var Data;
+Data = [23, 6, 7, 4, 5, 7];
+var Result = summation(Data);
+console.log("Summation of the array is: " + Result);

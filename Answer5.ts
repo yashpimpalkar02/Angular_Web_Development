@@ -1,16 +1,22 @@
-function Fibonacci(No : number): void 
+function ChkString(str: string): boolean 
 {
-    let a = 0, b = 1, sum = 0
-
-    console.log("Fibonacci series up to limit : ");
-    
-    while (sum <= No) 
+    if (str.indexOf("Marvellous") !== -1) 
     {
-        console.log(sum);
-        sum = a + b;
-        a = b;
-        b = sum;
+        return true;
+    } 
+    else 
+    {
+        return false;
     }
 }
 
-Fibonacci(21);
+var sentence: string = "Pune Kothrud Marvellous Infosystems";
+
+if (ChkString(sentence)) 
+{
+    console.log("The string contains the word 'Marvellous'.");
+} 
+else 
+{
+    console.log("The string does not contain the word 'Marvellous'.");
+}

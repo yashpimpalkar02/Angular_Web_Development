@@ -1,14 +1,26 @@
-function DisplayFactors(No : number) : void
+function maximum(No: number[]): number 
 {
-    console.log("Factors of number are: ")
-    for (let i = 1; i<= No / 2; i++)
+    var firstMax: number = Number.MIN_VALUE;
+    var secondMax: number = Number.MIN_VALUE;
+
+    for (let i = 0; i < No.length; i++) 
     {
-        if (No % i === 0)
+        if (No[i] > firstMax) 
         {
-            console.log(i);
+            secondMax = firstMax; 
+            firstMax = No[i];    
+        } 
+        else if (No[i] > secondMax && No[i] != firstMax) 
+        {
+            secondMax = No[i];   
         }
     }
-    console.log(No)
-} 
+    return secondMax;
+}
 
-DisplayFactors(20)
+var number : number[]
+number = [23, 89, 6, 29, 56, 45, 77, 32];
+
+var secondLargest: number = maximum(number);
+
+console.log("The second largest number is: " + secondLargest);

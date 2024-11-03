@@ -1,22 +1,24 @@
-function ChkPrime(No : number) : boolean
+function ChkArmstrong (No: number): boolean 
 {
-    if (No <= 1) return false
-    for (let i = 2; i <= No / 2; i++) 
+    let temp: number = No
+    let sum: number = 0
+
+    while (temp > 0) 
     {
-        if (No % i === 0) 
-        {
-            return false;
-        }
+        var digit: number = temp % 10
+        sum += (digit * digit * digit)
+        temp = temp / 10 | 0            
     }
-    return true; 
+
+    return sum === No;
 }
 
-var number = 11;
-if (ChkPrime(number)) 
+var number = 153
+if (ChkArmstrong(number)) 
 {
-    console.log(number +"is a prime number.");
+    console.log(`${number} is an Armstrong number`);
 } 
 else 
 {
-    console.log(number +"is not a prime number.");
+    console.log(`${number} is not an Armstrong number`);
 }

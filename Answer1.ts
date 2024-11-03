@@ -1,19 +1,20 @@
-function maximum(No1: number, No2: number, No3: number): number 
+function maximum(Data: number[]): number 
 {
-    if (No1 >= No2 && No1 >= No3) 
+    var max = Data[0]
+
+    for (let i = 1; i < Data.length; i++) 
     {
-        return No1;
-    } 
-    else if (No2 >= No1 && No2 >= No3) 
-    {
-        return No2;
-    } 
-    else 
-    {
-        return No3;
+        if (Data[i] > max) 
+        {
+            max = Data[i]; 
+        }
     }
+    return max
 }
 
-var Result = maximum(23, 89, 6)
+var Data : number [] = new Array(8)
+Data = [23, 89, 6, 29, 56, 45, 77, 32]
 
-console.log("Maximum number is : " + Result)
+var Result = maximum(Data)
+
+console.log("Maximum number is: " + Result)
