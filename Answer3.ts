@@ -1,26 +1,32 @@
-function maximum(No: number[]): number 
+class Circle 
 {
-    var firstMax: number = Number.MIN_VALUE;
-    var secondMax: number = Number.MIN_VALUE;
-
-    for (let i = 0; i < No.length; i++) 
+    Radius: number
+    PI: number = 3.14
+  
+    constructor(Radius: number) 
     {
-        if (No[i] > firstMax) 
-        {
-            secondMax = firstMax; 
-            firstMax = No[i];    
-        } 
-        else if (No[i] > secondMax && No[i] != firstMax) 
-        {
-            secondMax = No[i];   
-        }
+      this.Radius = Radius
     }
-    return secondMax;
+  
+    Area(): number 
+    {
+      return this.PI * this.Radius * this.Radius
+    }
 }
 
-var number : number[]
-number = [23, 89, 6, 29, 56, 45, 77, 32];
+class CircleX extends Circle 
+{
+    Circumference(): number 
+    {
+        return 2 * this.PI * this.Radius
+    }
+}
 
-var secondLargest: number = maximum(number);
+var circleX1 = new CircleX(11)
+var circleX2 = new CircleX(21)
 
-console.log("The second largest number is: " + secondLargest);
+console.log("CircleX 1 Circumference:", circleX1.Circumference())
+console.log("CircleX 1 Area:", circleX1.Area())
+
+console.log("CircleX 2 Circumference:", circleX2.Circumference())
+console.log("CircleX 2 Area:", circleX2.Area())

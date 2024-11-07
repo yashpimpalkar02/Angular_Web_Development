@@ -1,18 +1,22 @@
-function summation(No: number[]): number 
+class Circle 
 {
-    var sum = 0;
-
-    for (let i = 0; i < No.length; i++) 
+    Radius: number
+    PI: number = 3.14
+  
+    constructor(Radius: number) 
     {
-        sum += No[i]; 
+      this.Radius = Radius
     }
-
-    return sum;
+  
+    Area(): number 
+    {
+      return this.PI * this.Radius * this.Radius
+    }
 }
-
-var Data : number[]
-Data = [23, 6, 7, 4, 5, 7]
-
-var Result = summation(Data)
-
-console.log("Summation of the array is: "+Result)
+  
+  var circle1 = new Circle(11)
+  var circle2 = new Circle(21)
+  
+  console.log("Circle 1 Area:", circle1.Area())
+  
+  console.log("Circle 2 Area:", circle2.Area())

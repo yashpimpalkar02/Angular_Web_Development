@@ -1,18 +1,41 @@
-function maximum(No) {
-    var firstMax = Number.MIN_VALUE;
-    var secondMax = Number.MIN_VALUE;
-    for (var i = 0; i < No.length; i++) {
-        if (No[i] > firstMax) {
-            secondMax = firstMax;
-            firstMax = No[i];
-        }
-        else if (No[i] > secondMax && No[i] != firstMax) {
-            secondMax = No[i];
-        }
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        if (typeof b !== "function" && b !== null)
+            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var Circle = /** @class */ (function () {
+    function Circle(Radius) {
+        this.PI = 3.14;
+        this.Radius = Radius;
     }
-    return secondMax;
-}
-var number;
-number = [23, 89, 6, 29, 56, 45, 77, 32];
-var secondLargest = maximum(number);
-console.log("The second largest number is: " + secondLargest);
+    Circle.prototype.Area = function () {
+        return this.PI * this.Radius * this.Radius;
+    };
+    return Circle;
+}());
+var CircleX = /** @class */ (function (_super) {
+    __extends(CircleX, _super);
+    function CircleX() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    CircleX.prototype.Circumference = function () {
+        return 2 * this.PI * this.Radius;
+    };
+    return CircleX;
+}(Circle));
+var circleX1 = new CircleX(11);
+var circleX2 = new CircleX(21);
+console.log("CircleX 1 Circumference:", circleX1.Circumference());
+console.log("CircleX 1 Area:", circleX1.Area());
+console.log("CircleX 2 Circumference:", circleX2.Circumference());
+console.log("CircleX 2 Area:", circleX2.Area());
